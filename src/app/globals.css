@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+/* ─── Tailwind v4 Theme Tokens ─── */
+@theme {
+  /* Fonts — reference next/font injected variables */
+  --font-display: var(--font-bebas), "Bebas Neue", sans-serif;
+  --font-sans:    var(--font-grotesk), "Space Grotesk", sans-serif;
+
+  /* Brand Colors */
+  --color-accent:    #D4F000;
+  --color-accent-fg: #000000;
+
+  /* Grays */
+  --color-gray-50:  #f9f9f9;
+  --color-gray-100: #f0f0f0;
+  --color-gray-400: #9a9a9a;
+  --color-gray-600: #555555;
+}
+
+/* ─── Base ─── */
+html {
+  background-color: #fff;
+  color: #000;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+  line-height: 1;
+}
+
+/* ─── Highlight expand (left → right) ─── */
+.highlight-expand {
+  background-image: linear-gradient(var(--color-accent), var(--color-accent));
+  background-size: 0% 100%;
+  background-position: left center;
+  background-repeat: no-repeat;
+  transition: background-size 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.highlight-expand:hover {
+  background-size: 100% 100%;
+}
